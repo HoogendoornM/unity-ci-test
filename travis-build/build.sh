@@ -1,7 +1,7 @@
 #! /bin/sh
 
 PROJECT_PATH=$(pwd)/$UNITY_PROJECT_PATH
-UNITY_BUILD_DIR=$(pwd)/Build
+UNITY_BUILD_DIR=/Builds
 LOG_FILE=$UNITY_BUILD_DIR/unity-win.log
 
 
@@ -32,7 +32,7 @@ fi
 
 echo 'Attempting to zip builds'
 #zip -r $(pwd)/Build/windows.zip $(pwd)/Build/win/
-zip -r /Build/windows.zip $(pwd)/Build/win/
+zip -r /Builds/windows.zip $(pwd)/Build/win/
 
 
 #echo 'Build logs:'
