@@ -9,9 +9,8 @@ script:
 
 deploy:
   provider: releases
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
-  keep-history: true
+  api_key: $GITHUB_OAUTH_TOKEN
+  file_glob: true
+  skip_cleanup: true
   on:
-    all_branches: true
-    target-branch: development
+    tags: true
