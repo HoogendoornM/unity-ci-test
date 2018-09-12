@@ -1,7 +1,7 @@
 #! /bin/sh
 
 PROJECT_PATH=/$UNITY_PROJECT_PATH
-UNITY_BUILD_DIR= /Build
+UNITY_BUILD_DIR=/Build
 LOG_FILE=$UNITY_BUILD_DIR/unity-win.log
 
 
