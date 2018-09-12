@@ -30,6 +30,9 @@ else
   ERROR_CODE=1
 fi
 
+echo 'Attempting to zip builds'
+zip -r $(pwd)/Build/windows.zip $(pwd)/Build/win/
+
 #echo 'Build logs:'
 #cat $LOG_FILE
 
