@@ -10,7 +10,7 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: 006ff3a66d27b256f58bd5d11220f8e06f993ac0  # Set in the settings page of your repository, as a secure variable
+  github-token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
   keep-history: true
   on:
     all_branches: true
