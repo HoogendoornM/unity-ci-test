@@ -2,10 +2,17 @@ language: objective-c
 osx_image: xcode61
 rvm:
 - 2.2
+cache:
+  directories:
+    - $UNITY_DOWNLOAD_CACHE
+
 install:
 - ./Scripts/install.sh
 script:
 - ./Scripts/build.sh
+
+after_success:
+- ./Scripts/post_build.sh
 
 before_deploy:
 - DEPLOY_UNITYPACKAGE="$(ls -a release/*.zip | head -n 1)"
