@@ -31,7 +31,7 @@ else
 fi
 
 echo 'Attempting to zip builds'
-cd $(pwd) && zip -r $(pwd)/Build/windows.zip $(pwd)/Build/win/
+cd $(pwd) && zip -r $(pwd)/Build/windows.zip $(pwd)/Build/win/ && cd ..
 
 #echo 'Build logs:'
 #cat $LOG_FILE
