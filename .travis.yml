@@ -27,7 +27,7 @@ deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
   file_glob: true
-  file: *
+  file: /Build/windows.zip
   skip_cleanup: true
   overwrite: true
   on:
