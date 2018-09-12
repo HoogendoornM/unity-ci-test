@@ -14,5 +14,4 @@ deploy:
   keep-history: true
   on:
     tags: true
-    all_branches: true
     branch: deployment
