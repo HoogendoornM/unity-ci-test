@@ -8,11 +8,10 @@ script:
 - ./Scripts/build.sh
 
 deploy:
-  provider: pages
+  provider: releases
   skip-cleanup: true
   github-token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
   keep-history: true
   on:
     all_branches: true
     target-branch: development
-    repo: HoogendoornM/unity-ci-test
