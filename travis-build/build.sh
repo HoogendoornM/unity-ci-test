@@ -18,8 +18,7 @@ mkdir $UNITY_BUILD_DIR
   -silent-crashes \
   -logFile \
   -projectPath "$PROJECT_PATH" \
-  #-buildWindows64Player  "$(pwd)/build/win/ci-build.exe" \
-  -buildWindows64Player  "/build/ci-build.exe" \
+  -buildWindows64Player  "$(pwd)/build/win/ci-build.exe" \
   -quit \
   | tee "$LOG_FILE"
   
@@ -32,8 +31,7 @@ else
 fi
 
 echo 'Attempting to zip builds'
-#zip -r $(pwd)/Build/windows.zip $(pwd)/Build/win/
-zip -r $(pwd)/Build/windows.zip /Build/
+zip -r $(pwd)/Build/windows.zip $(pwd)/Build/win/
 
 #echo 'Build logs:'
 #cat $LOG_FILE
