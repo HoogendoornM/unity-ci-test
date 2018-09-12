@@ -31,7 +31,7 @@ else
 fi
 
 echo 'Attempting to zip builds'
-zip -r -6jpr $(pwd)/Build/windows.zip $(pwd)/Build/win/
+zip -j $(pwd)/Build/windows.zip $(pwd)/Build/win/
 
 #echo 'Build logs:'
 #cat $LOG_FILE
