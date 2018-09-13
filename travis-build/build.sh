@@ -31,8 +31,8 @@ else
 fi
 
 echo 'Attempting to zip builds'
-pushd $(pwd)/build
-zip -r windows.zip /win/
+pushd $(pwd)/build/win
+zip -r windows.zip ./*
 popd
 
 #echo 'Build logs:'
