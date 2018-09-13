@@ -32,7 +32,7 @@ fi
 
 echo 'Attempting to zip builds'
 pushd ~/Build
-zip -r windows.zip /win/
+zip -r windows.zip . -i /win/
 popd
 
 #echo 'Build logs:'
