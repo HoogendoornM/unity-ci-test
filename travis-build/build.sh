@@ -44,7 +44,7 @@ popd
   -silent-crashes \
   -logFile \
   -projectPath "$PROJECT_PATH" \
-  -executeMethod BuildMyGame.BuildAndroid  "$(pwd)/build/android/android-build.exe" \
+  -executeMethod BuildMyGame.BuildAndroid  "$(pwd)/build/android/android-build.apk" \
   -quit \
   | tee "$LOG_FILE"
   
