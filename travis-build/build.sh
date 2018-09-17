@@ -9,6 +9,7 @@ ERROR_CODE=0
 echo "Items in project path ($project_path):"
 ls "$project_path"
 
+#############################WINDOWS##################
 
 echo "Building project for Windows..."
 mkdir $UNITY_BUILD_DIR
@@ -18,7 +19,7 @@ mkdir $UNITY_BUILD_DIR
   -silent-crashes \
   -logFile \
   -projectPath "$PROJECT_PATH" \
-  -buildWindows64Player  "$(pwd)/build/win/ci-build.exe" \
+  -buildWindows64Player  "$(pwd)/build/win/win-build.exe" \
   -quit \
   | tee "$LOG_FILE"
   
@@ -33,6 +34,23 @@ fi
 echo 'Attempting to zip builds'
 pushd $(pwd)/build
 zip -r windows.zip win/
+popd
+
+#########################ANDROID#####################
+
+/Applications/Unity/Unity.app/Contents/MacOS/Unity \
+  -batchmode \
+  -nographics \
+  -silent-crashes \
+  -logFile \
+  -projectPath "$PROJECT_PATH" \
+  -executeMethod BuildMyGame.BuildAndroid  "$(pwd)/build/android/android-build.exe" \
+  -quit \
+  | tee "$LOG_FILE"
+  
+echo 'Attempting to zip builds'
+pushd $(pwd)/build
+zip -r android.zip android/
 popd
 
 #echo 'Build logs:'
