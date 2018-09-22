@@ -4,6 +4,7 @@ rvm:
 - 2.2         #see before_install for getting RVM stable.
 
 dist: trusty
+sudo: required
 
 env:
 - TRAVIS_TAG="3.0" PROJECT_NAME="TestPackage" UNITY_PROJECT_PATH="UnityExample" UNITY_DOWNLOAD_CACHE="$(pwd)/unity_download_cache" DEPLOY_UNITYPACKAGE="path set in deploy script"
