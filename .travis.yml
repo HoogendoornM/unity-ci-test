@@ -10,7 +10,7 @@ env:
 
 addons:
   sonarcloud:
-    organization: "unitycitest" # the key of the org you chose at step #3
+    organization: "hoogendoornm-github" # the key of the org you chose at step #3
     token:
       secure: $SONAR_TOKEN # encrypted value of your token
 
