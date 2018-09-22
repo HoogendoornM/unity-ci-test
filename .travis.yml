@@ -3,9 +3,16 @@ osx_image: xcode9.2
 rvm:
 - 2.2         #see before_install for getting RVM stable.
 
-env:
-- TRAVIS_TAG="2.6" PROJECT_NAME="TestPackage" UNITY_PROJECT_PATH="UnityExample" UNITY_DOWNLOAD_CACHE="$(pwd)/unity_download_cache" DEPLOY_UNITYPACKAGE="path set in deploy script"
+dist: trusty
 
+env:
+- TRAVIS_TAG="3.0" PROJECT_NAME="TestPackage" UNITY_PROJECT_PATH="UnityExample" UNITY_DOWNLOAD_CACHE="$(pwd)/unity_download_cache" DEPLOY_UNITYPACKAGE="path set in deploy script"
+
+addons:
+  sonarcloud:
+    organization: "unitycitest" # the key of the org you chose at step #3
+    token:
+      secure: $SONAR_TOKEN # encrypted value of your token
 
 cache:
   directories:
@@ -22,6 +29,7 @@ install:
 
 script:
 - ./travis-build/build.sh
+- sonar-scanner
 
 deploy:
   provider: releases
